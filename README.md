@@ -1,4 +1,6 @@
-# Teste prático para desenvolvedor backend em Laravel
+![GrupoAllo](https://allopagfacil.com.br/site-2020/img/logo-grupoallo.png)
+
+# Teste prático - Backend
 
 Olá candidato(a),
 
