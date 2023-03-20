@@ -54,7 +54,7 @@ $ git clone https://gitlab.com/MLopesG/teste-back-end
 
 ### Instalar dependência:
 
-Dentro do diretório 'Backend', execute o comando:
+Dentro do diretório, execute o comando:
 
 ```bash
 $ composer install 
