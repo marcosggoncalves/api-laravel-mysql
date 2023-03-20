@@ -118,7 +118,6 @@ class TarefasTest extends TestCase
         $cadastroEdit['titulo'] = "Entregar teste(editado)";
         $cadastroEdit['data_conclusao'] = date('Y-m-d');
 
-
         $response = $this->withHeaders([
             'Accept' => 'application/json',
             'Authorization' => "Bearer {$login->token}"
