@@ -15,11 +15,15 @@ Acessar documentação [Swagger](http://localhost:8000/api/documentation)
 
 Página que irá abrir:
 
+![Swagger](https://gitlab.com/MLopesG/teste-back-end/-/raw/main/imagens/Documentation%20.png)
+
 ## Observação:
 
 Não se esqueça de fazer o login para utilizar os endpoints:
 
 1º Passo(Autenticar com seu usuário e senha):
+
+![Swagger](https://gitlab.com/MLopesG/teste-back-end/-/raw/main/imagens/Login.png)
 
 Copie o token gerado:
 
@@ -41,6 +45,8 @@ Copie o token gerado:
 ```
 
 2º Passo(Cole o token para autorizar acesso):
+
+![Swagger](https://gitlab.com/MLopesG/teste-back-end/-/raw/main/imagens/Auth.png)
 
 ## Iniciando Aplicação
 
