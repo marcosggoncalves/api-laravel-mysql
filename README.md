@@ -1,42 +1,96 @@
-![GrupoAllo](https://allopagfacil.com.br/site-2020/img/logo-grupoallo.png)
-
 # Teste prático - Backend
 
-Olá candidato(a),
+## Descrição
 
-Agradecemos seu interesse em se juntar à nossa equipe! Como parte do processo de seleção, gostaríamos que você realizasse este teste prático para avaliarmos suas habilidades em desenvolvimento de APIs em Laravel com MySQL.
+API RESTful utilizando Laravel e Mysql.
 
-### Contexto
-Um cliente precisa de uma API para gerenciar uma lista de tarefas a serem realizadas. Cada tarefa deve ter um título, uma descrição, uma data de criação e uma data de conclusão. O cliente também precisa que a API possa retornar uma lista de todas as tarefas, bem como uma tarefa específica pelo seu ID.
+Aplicação apresenta uma organização bem simples, na arquitetura monolítica que inteliga todos os componentes em um único programa dentro de uma única plataforma.
+Como também, foi utilizado o conceito do 'Repository Pattern' que permite um encapsulamento da lógica de acesso a dados, impulsionando o uso da injeção de dependencia (DI) e proporcionando uma visão mais orientada a objetos das interações com a DAL. Na minha opinião, esse pattern é bem intessante, pois conseguimos abstrair o acesso direto com banco. Além disso, é um bom Pattern para entender e estudar definições importantes.
 
-### Requisitos
-- A API deve ser desenvolvida em Laravel.
-- Os dados devem ser armazenados em um banco de dados MySQL.
-- A API deve permitir criar, atualizar, excluir e listar tarefas.
-- A API deve ter autenticação por token JWT.
+## Documentação OpenAPI/Swagger
 
-### O que esperamos de você
-- Crie um repositório no GitHub para o projeto.
-- Desenvolva a API de acordo com os requisitos especificados acima.
-- Implemente os testes unitários e garanta que todos eles passem.
-- Escreva um README.md detalhado explicando como executar a API localmente e como executar os testes.
-- Faça commits regulares e escreva mensagens de commit descritivas.
-- Adote boas práticas de codificação e design de software.
+Nesse projeto, configuerei o swagger para documentar os endpoints. Sem necessidade de um software terceiro para testá los.
 
-### O que avaliaremos
-- Qualidade do código e da arquitetura.
-- Adesão aos requisitos do cliente.
-- Boas práticas de codificação.
-- Capacidade de documentação.
+Acessar documentação [Swagger](http://localhost:8000/api/documentation)
 
-### Como enviar sua solução
-- Faça um fork deste repositório ou crie um em sua conta do GitLab.
-- Desenvolva a solução no seu repositório criado.
-- Envie-nos o link do repositório que deve estar como público.
+Página que irá abrir:
 
-### Informações adicionais
-- Se você tiver alguma dúvida sobre o teste ou o contexto do projeto, não hesite em entrar em contato conosco.
-- Não se preocupe em criar uma interface do usuário para a API. Apenas crie a API.
-- Não se preocupe em implementar outras funcionalidades além das especificadas nos requisitos.
+## Observação:
 
-Boa sorte!
+Não se esqueça de fazer o login para utilizar os endpoints:
+
+1º Passo(Autenticar com seu usuário e senha):
+
+Copie o token gerado:
+
+*Exemplo de retorno:*
+
+```bash
+{
+  "status": true,
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2dlcmVudGVzL2xvZ2luIiwiaWF0IjoxNjY5NTg4NDQ1LCJleHAiOjE2Njk1OTIwNDUsIm5iZiI6MTY2OTU4ODQ0NSwianRpIjoiTWgzUG5INlpuOTVwZDc2VSIsInN1YiI6IjEiLCJwcnYiOiIxNWJlNDhiNjdjNmE4YmM4ZjI1MjFlYzdlNzQ0MGM2MzliNjhlNjE5In0.BdB28RgwEAllB1NO6xd_s-86x3TAMtOTSd8x5AeBpl0",
+  "usuario": {
+    "id": 1,
+    "nome": "Marcos",
+    "email": "marcoslopesg7@gmail.com",
+    "created_at": "2022-11-27T21:12:21.000000Z",
+    "updated_at": "2022-11-27T21:12:21.000000Z"
+  }
+}
+
+```
+
+2º Passo(Cole o token para autorizar acesso):
+
+## Iniciando Aplicação
+
+### Baixar projeto:
+
+GitHub
+
+```bash
+$ git clone https://gitlab.com/MLopesG/teste-back-end
+```
+
+### Instalar dependência:
+
+Dentro do diretório 'Backend', execute o comando:
+
+```bash
+$ composer install 
+```
+
+### Criando o banco de dados:
+
+ - Configure a conexão com o banco "env". 
+
+Exemplo:
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=lista_tarefas
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+ - Crie um database "lista_tarefas" no SGBD MYSQL e execute os seguintes comandos:
+
+```bash
+
+- Comando para criar estrutura(banco):
+
+$  php artisan migrate
+
+- Comando para criar registros primários:
+
+$  php artisan db:seed  
+
+```
+
+Por fim, só subir o serviço da aplicação:
+
+```bash
+$  php artisan serve
+```
