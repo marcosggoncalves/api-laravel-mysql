@@ -13,7 +13,7 @@ class Usuario extends Authenticatable implements JWTSubject
 
     protected $fillable = ['nome', 'email', 'password'];
 
-    protected $hidden = ['password'];
+    protected $hidden = ['password', 'updated_at'];
 
     public function getJWTIdentifier()
     {
