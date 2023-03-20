@@ -4,12 +4,16 @@ namespace App\Repositories;
 
 use App\Interfaces\ITarefasInterface;
 use App\Models\Tarefa;
+use Illuminate\Support\Facades\DB;
 
 class TarefasRepository implements ITarefasInterface
 {
     public function getTarefas()
     {
-        return Tarefa::orderBy('id', 'desc')->paginate(15);
+        return DB::table('tarefas')
+            ->select('id', 'titulo', 'descricao', 'data_conclusao', 'created_at as criado_em')
+            ->orderBy('data_conclusao', 'asc')
+            ->paginate(15);
     }
 
     public function getTarefa($id)
@@ -32,7 +36,7 @@ class TarefasRepository implements ITarefasInterface
         $tarefa->titulo = $request['titulo'];
         $tarefa->descricao = $request['descricao'];
         $tarefa->data_conclusao = $request['data_conclusao'];
-        
+
         return $tarefa->save();
     }
 
