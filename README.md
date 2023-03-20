@@ -100,3 +100,48 @@ Por fim, só subir o serviço da aplicação:
 ```bash
 $  php artisan serve
 ```
+
+## Testando Aplicação
+
+Nessa aplicação, contém dois tipos de testes(Unitário, Integração).
+
+Comando para executar os testes:
+
+```bash
+$  php artisan test
+```
+
+Exemplo:
+
+![Swagger](https://gitlab.com/MLopesG/teste-back-end/-/raw/main/imagens/Teste.png)
+
+### Observação: 
+
+Caso você queira criar um novo database para não interferir no banco de produção, fique à vontade.
+
+ - Configure a conexão com o banco ".env.testing". 
+
+Exemplo:
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=lista_tarefas_test
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Execute os comando:
+
+```bash
+
+- Comando para criar estrutura(banco):
+
+$  php artisan migrate
+
+- Comando para criar registros primários:
+
+$  php artisan db:seed  
+
+```
